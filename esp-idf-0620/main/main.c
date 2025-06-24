@@ -113,7 +113,6 @@ void combined_task(void *arg) {
 
     printf("%s finished sum phase\n", task_name);
     
-
     xSemaphoreTake(mutex, portMAX_DELAY);
     tasks_finished++;
     if (tasks_finished == 4) {  // 2 tasks × 2 phases
