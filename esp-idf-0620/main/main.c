@@ -83,7 +83,7 @@ void combined_task(void *arg) {
         xSemaphoreGive(mutex);
         
         if (mult_done) break;
-        vTaskDelay(10 / portTICK_PERIOD_MS);
+        vTaskDelay(1);
     }
     
     // Matrix Sum Phase
@@ -108,7 +108,7 @@ void combined_task(void *arg) {
             column = 0;
         }
         xSemaphoreGive(mutex);
-        vTaskDelay(10 / portTICK_PERIOD_MS);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 
     printf("%s finished sum phase\n", task_name);
